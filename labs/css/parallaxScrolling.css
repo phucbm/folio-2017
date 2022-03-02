@@ -1,0 +1,60 @@
+* {
+	margin:0; padding: 0; outline: 0; border:none;
+}
+
+body {
+	text-align: center; overflow-x: hidden;
+}
+
+.banner {
+	height: 500px; overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.title {padding:30px 0;}
+.content {
+	max-width: 900px; margin:auto;
+	line-height: 2; font-size: 17px;
+	text-align: justify;
+}
+
+/** function style **/
+.parallaxScrolling {
+	position:relative;
+	overflow:hidden;
+	background-image:unset!important;
+}
+
+.parallaxScrolling img.parallaxObject {
+	position:absolute; top:0; left:50%; z-index:-1;
+	-webkit-transform:translateX(-50%);-ms-transform:translateX(-50%);transform:translateX(-50%);
+	display:block; visibility: unset; width:auto; max-width: unset;
+}
+
+.parallaxScrollingDefault {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.parallaxScrollingDefault img.parallaxObjectDefault {
+	visibility: hidden;
+}
+
+/* style for debugging */
+.parallaxScrolling.debugging {position:relative; border:2px solid blue;}
+.f_size, .i_size, .viewable_area {
+	position:absolute; left:0;
+	background:rgba(255,255,255,0.5);
+	font-size:20px; padding:5px;
+}
+.f_size {top:0; background:#0000ff73; color:#fff}
+.i_size {bottom:0;}
+.viewable_area {
+	top:50%; left:50%; font-size:30px;
+	transform:translate(-50%,-50%);
+}

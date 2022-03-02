@@ -1,0 +1,184 @@
+/****************************
+ * iLixi project
+ ****************************/
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC:400,700|Pattaya&subset=vietnamese');
+/*
+font-family: 'Amatic SC', cursive;
+font-family: 'Pattaya', sans-serif;
+*/
+
+/** Colors
+red: color:#f44336;
+yellow: color:#f1fd09;
+*/
+body.post-template-ilixi-template {height:100vh}
+.post-template-ilixi-template header,
+.post-template-ilixi-template footer {display:none}
+
+
+/* bg */
+.main_content.ilixi {
+    height:100%; position:relative;
+    background-size:cover; background-repeat:no-repeat; background-position:center;
+}
+.main_content.ilixi:before {
+    content:''; position:absolute; top:0; left:0;
+    width:100%; height:100%; opacity:.3;
+    background-color:rgba(255,255,255,.6);
+    background-image:url('../images/lixi-stripe-pattern.png');
+    background-size:cover; background-repeat:no-repeat; background-position:center;
+}
+
+/* slider */
+.ilixi-slider {
+    max-width:400px; width:100%; margin:auto;
+    position:fixed; top:50%; left:50%;
+    -webkit-transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%);transform:translate(-50%,-50%);
+}
+.ilixi-slider .slide-item {padding: 40px;}
+.ilixi-slider .slide-item-inner {
+    background:#f44336; text-align:center;
+    height:550px;
+    padding:50px 30px; box-sizing:border-box;-webkit-box-sizing:border-box;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+    display:-webkit-box; display:-webkit-flex; display:-ms-flexbox; display:flex;
+    -webkit-box-orient:vertical; -webkit-box-direction:normal; -webkit-flex-direction:column;
+    -ms-flex-direction:column; flex-direction:column;
+    position:relative;
+    /*tilt*/
+    -webkit-transform-style: preserve-3d;transform-style: preserve-3d;
+}
+.ilixi-slider .slide-item-inner:before {
+    content:''; position:absolute; top:0; left:0; z-index:0;
+    width:100%; height:100%; opacity:.5;
+    background-image:url('../images/lixi-border-pattern.png');
+    background-size: 100% 100%; background-repeat:no-repeat; background-position:center;
+}
+.ilixi-slider .slide-item-inner > div {position:relative;}
+.ilixi-slider .slide-title h3 {
+    font-family: 'Amatic SC', cursive; color:#f1fd09;
+}
+
+.ilixi-slider .slide-image {
+    margin:auto; min-height:300px;
+    background-size:cover; background-repeat:no-repeat; background-position:center;
+    -webkit-transition:all .3s ease;-o-transition:all .3s ease;transition:all .3s ease;
+}
+.ilixi-slider .slide-item-inner:hover .slide-image {
+    transform: translateZ(30px);
+    -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
+}
+.ilixi-slider .slide-item:first-child .slide-image {
+    width:200px; height:200px; min-height:200px;
+    -webkit-border-radius:50%;border-radius:50%;
+}
+.ilixi-slider .slide-image img {visibility:hidden}
+
+.ilixi-slider .slide-text {font-family: 'Pattaya', sans-serif; color:#f1fd09;}
+
+/*arrow*/
+.ilixi-slider .slick-arrow {
+    width:600px; height:100%; /*cursor:none;*/
+}
+.ilixi-slider .slick-prev {left: -400px;}
+.ilixi-slider .slick-next {right: -400px;}
+/*pseudo arrow*/
+.ilixi-slider .slick-arrow:before, .ilixi-slider .slick-arrow:after {
+    content:''; position:absolute; top:50%;
+    width:40px; height:40px; border:2px solid #00000073;
+    -webkit-transform:translateY(-50%) rotate(45deg);
+    -ms-transform:translateY(-50%) rotate(45deg);
+    transform:translateY(-50%) rotate(45deg);
+}
+/*prev fx*/
+.ilixi-slider .slick-prev:before, .ilixi-slider .slick-prev:after {
+    border-right:none; border-top:none;
+}
+.ilixi-slider .slick-prev:before {
+    -webkit-animation: prev-fx 3s ease .1s infinite;animation: prev-fx 3s ease .1s infinite;
+}
+.ilixi-slider .slick-prev:after {
+    width:50px; height:50px;
+    -webkit-animation: prev-fx 3s ease 0s infinite;animation: prev-fx 3s ease 0s infinite;
+}
+@-webkit-keyframes prev-fx {
+    0%   {right:0; opacity:0}
+    50% {opacity:1}
+    100% {right:100%; opacity:0}
+}
+@keyframes prev-fx {
+    0%   {right:0; opacity:0}
+    50% {opacity:1}
+    100% {right:100%; opacity:0}
+}
+/*next fx*/
+.ilixi-slider .slick-next:before, .ilixi-slider .slick-next:after {
+    border-left:none; border-bottom:none;
+}
+.ilixi-slider .slick-next:before {
+    -webkit-animation: next-fx 3s ease .1s infinite;animation: next-fx 3s ease .1s infinite;
+}
+.ilixi-slider .slick-next:after {
+    width:50px; height:50px;
+    -webkit-animation: next-fx 3s ease 0s infinite;animation: next-fx 3s ease 0s infinite;
+}
+@-webkit-keyframes next-fx {
+    0%   {left:0; opacity:0}
+    50% {opacity:1}
+    100% {left:100%; opacity:0}
+}
+@keyframes next-fx {
+    0%   {left:0; opacity:0}
+    50% {opacity:1}
+    100% {left:100%; opacity:0}
+}
+
+/*hover*/
+.ilixi-slider .slick-arrow:hover:before, .ilixi-slider .slick-arrow:hover:after {visibility:hidden}
+
+/*dots*/
+.ilixi-slider .slick-dots {
+    position:fixed; top:100%; left:0;
+    margin:0; padding:0;
+}
+
+/*cursor*/
+#cursor, .pointer {position:fixed}
+.pointer:before, .pointer:after {
+    content:''; position:absolute; left:0; opacity:0;
+    background:#f1fd09;; width:0; height:0;
+    -webkit-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;
+}
+.on-prev .pointer:before, .on-next .pointer:before {
+    top:25px; opacity:1; width:50px; height:3px;
+    -webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);transform:rotate(45deg);
+}
+.on-prev .pointer:after, .on-next .pointer:after {
+    top:-9px; opacity:1; width:50px; height:3px;
+    -webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);transform:rotate(-45deg);
+}
+.on-next .pointer:before {top:-9px}
+.on-next .pointer:after {top:25px}
+
+/*info link*/
+#info-link {
+    position:fixed; top:18px; left:160px; opacity:.7;
+    -webkit-transition:all .2s ease;-o-transition:all .2s ease;transition:all .2s ease;
+}
+#info-link a {
+    display:block; background:#f44336; padding:0 10px;
+    text-decoration:none; color:#fff; font-size:11px;
+    -webkit-border-radius:3px;border-radius:3px;
+}
+#info-link a:before {content:'\f059'; font-family:"Fontawesome"; padding-right:10px;}
+#info-link:hover {opacity:1}
+
+/*fb like share*/
+.ilixi .interaction-section {
+    position:fixed; top:0; left:20px;
+    border:none; margin:0; padding:0;
+}
